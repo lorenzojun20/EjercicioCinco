@@ -127,52 +127,51 @@ public class Ejercicio5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        String mpp,mss,msf,mca,mt;
-        double sb,op1=0,op2=0,op3=0,op4=0,op5=0;
-        if(txtSueldoBase.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Digite Sueldo Base","ERROR",JOptionPane.ERROR_MESSAGE);
+        String mpp, mss, msf, mca, mt;
+        double sb, op1 = 0, op2 = 0, op3 = 0, op4 = 0, op5 = 0;
+        if (txtSueldoBase.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite Sueldo Base", "ERROR", JOptionPane.ERROR_MESSAGE);
             txtSueldoBase.requestFocusInWindow();
+        } else {
+            sb = Double.parseDouble(txtSueldoBase.getText());
+            op1 = (sb * 1) / 100;
+            op2 = (sb * 4) / 100;
+            op3 = (sb * 0.5) / 100;
+            op4 = (sb * 5) / 100;
+            op5 = sb - (op1 + op2 + op3 + op4);
         }
-        else{
-            sb=Double.parseDouble(txtSueldoBase.getText());
-            op1=(sb*1)/100;
-            op2=(sb*4)/100;
-            op3=(sb*0.5)/100;
-            op4=(sb*5)/100;
-            op5=sb-(op1+op2+op3+op4);
-        }
-        mpp=String.valueOf(op1);
-        txtMontPP.setText(mpp);
-        mss=String.valueOf(op2);
-        txtMontSS.setText(mss);
-        msf=String.valueOf(op3);
-        txtMontSF.setText(msf);
-        mca=String.valueOf(op4);
-        txtMontCA.setText(mca);
-        mt=String.valueOf(op5);
-        txtMonTotal.setText(mt);
-        
+        mpp = String.valueOf(op1);
+        txtMontPP.setText("$" + mpp);
+        mss = String.valueOf(op2);
+        txtMontSS.setText("$" + mss);
+        msf = String.valueOf(op3);
+        txtMontSF.setText("$" + msf);
+        mca = String.valueOf(op4);
+        txtMontCA.setText("$" + mca);
+        mt = String.valueOf(op5);
+        txtMonTotal.setText("$" + mt);
+
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
-       txtSueldoBase.setText("");
-       txtMontPP.setText("");
-       txtMontSS.setText("");
-       txtMontSF.setText("");
-       txtMontCA.setText("");
-       txtMonTotal.setText("");
-       
-       txtSueldoBase.requestFocusInWindow();
+        txtSueldoBase.setText("");
+        txtMontPP.setText("");
+        txtMontSS.setText("");
+        txtMontSF.setText("");
+        txtMontCA.setText("");
+        txtMonTotal.setText("");
+
+        txtSueldoBase.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     private void txtSueldoBaseKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSueldoBaseKeyTyped
-        char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
     }//GEN-LAST:event_txtSueldoBaseKeyTyped
 
     /**
